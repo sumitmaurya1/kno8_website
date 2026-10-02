@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
-import { SocialIcon } from "@/components/ui/SocialIcon";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { companies } from "@/data/companies";
 import { contactHref, siteConfig, socialLinks } from "@/data/site";
 import type { NavItem } from "@/types";
@@ -13,6 +13,7 @@ const columns: { title: string; links: NavItem[] }[] = [
       { label: "About", href: "/about" },
       { label: "Companies", href: "/companies" },
       { label: "Careers", href: "/careers" },
+      { label: "Partner With Us", href: "/partner" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -45,10 +46,10 @@ const columns: { title: string; links: NavItem[] }[] = [
 ];
 
 export function Footer() {
-  const socials = socialLinks.filter((link) => link.href);
+  const socials = socialLinks.filter((link) => link.href || link.showInFooter);
 
   return (
-    <footer className="border-t border-line bg-white">
+    <footer className="overflow-hidden border-t border-line bg-surface">
       <Container className="py-16 sm:py-20">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -57,23 +58,9 @@ export function Footer() {
             </Link>
             <p className="mt-3 text-muted">{siteConfig.tagline}</p>
 
-            {socials.length > 0 && (
-              <ul className="mt-8 flex gap-2">
-                {socials.map((link) => (
-                  <li key={link.platform}>
-                    <a
-                      href={link.href!}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Kno8 on ${link.label} (opens in a new tab)`}
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-navy transition-colors hover:border-electric/50 hover:text-electric"
-                    >
-                      <SocialIcon platform={link.platform} className="h-[18px] w-[18px]" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <div className="mt-8">
+              <SocialLinks links={socials} owner="Kno8" />
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:col-span-8">
@@ -104,6 +91,14 @@ export function Footer() {
           <p>We Build Ideas Into Companies.</p>
         </div>
       </Container>
+
+      {/* Oversized wordmark that closes the page. */}
+      <p
+        aria-hidden="true"
+        className="display pointer-events-none -mb-[0.16em] select-none overflow-hidden bg-gradient-to-b from-electric/20 to-orchid/0 bg-clip-text text-center text-[27vw] leading-[0.8] text-transparent"
+      >
+        Kno8
+      </p>
     </footer>
   );
 }

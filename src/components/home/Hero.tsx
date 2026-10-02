@@ -16,9 +16,14 @@ const facts = [
 export function Hero() {
   return (
     <section className="relative overflow-x-clip pb-10 pt-28 sm:pt-36">
-      <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
+      {/* Faint dot grid behind the visual, fading out toward the copy. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(37,99,255,0.22)_1px,transparent_1.5px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_at_78%_42%,black,transparent_62%)]"
+      />
+      <Container className="relative grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
         <div className="lg:col-span-7">
-          <Eyebrow className="animate-rise text-navy">Kno8 — Building what&rsquo;s next</Eyebrow>
+          <Eyebrow className="animate-rise text-fg">Kno8 — Building what&rsquo;s next</Eyebrow>
           <h1 className="display mt-5 text-[clamp(2.75rem,6.6vw,5.25rem)]">
             <span className="block origin-bottom animate-flip [animation-delay:80ms]">
               We Build Ideas

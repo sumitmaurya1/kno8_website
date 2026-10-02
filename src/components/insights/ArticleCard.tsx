@@ -12,7 +12,7 @@ const covers = [
 
 export function ArticleCard({ article, index = 0 }: { article: Article; index?: number }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-transform duration-300 ease-out-soft hover:-translate-y-1">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-card transition-transform duration-300 ease-out-soft hover:-translate-y-1">
       <div
         aria-hidden="true"
         className="relative flex aspect-[16/10] items-center justify-center overflow-hidden"
@@ -21,7 +21,7 @@ export function ArticleCard({ article, index = 0 }: { article: Article; index?: 
         <LogoMark className="h-24 w-auto opacity-90 mix-blend-luminosity" sizes="80px" />
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <p className="self-start rounded-full bg-[#ECEBFF] px-3 py-1 text-xs font-semibold text-iris">
+        <p className="self-start rounded-full bg-tint px-3 py-1 text-xs font-semibold text-iris">
           {article.category}
         </p>
         <h3 className="mt-4 font-display text-xl font-bold leading-snug tracking-tight">

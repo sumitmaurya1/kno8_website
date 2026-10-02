@@ -25,8 +25,6 @@ export const positioning: { title: string; description: string; icon: LucideIcon
   { title: "Possibilities", description: "What comes next", icon: Sparkles },
 ];
 
-export const heroLabels = ["Technology", "Wellness", "Media", "Products", "Startups"];
-
 export const buildSteps = [
   {
     title: "Discover",
@@ -227,3 +225,45 @@ export const faqs = [
       "Use the contact page to tell us what you're building or what you do. We are always interested in meeting founders, creators, specialists and businesses working on meaningful ideas.",
   },
 ];
+
+/** The three routes on the Partner page. Each has its own short form. */
+export const partnerPaths = [
+  {
+    value: "founders",
+    title: "Founders",
+    summary:
+      "You have an idea or an early company and want a partner to help design, build and launch it.",
+    orgLabel: "Company or idea name",
+    orgRequired: false,
+    detailLabel: "Stage",
+    details: ["Just an idea", "Prototype", "Launched", "Growing"],
+    messageLabel: "What are you building?",
+    submitLabel: "Send My Idea",
+  },
+  {
+    value: "investors",
+    title: "Investors",
+    summary: "You're interested in Kno8 or one of its companies and want an introduction.",
+    orgLabel: "Firm",
+    orgRequired: false,
+    detailLabel: "Area of interest",
+    /** Company names are appended automatically from companies.ts. */
+    details: ["Kno8 as a whole", "Future ventures"],
+    messageLabel: "What would you like to know?",
+    submitLabel: "Request an Introduction",
+  },
+  {
+    value: "collaborators",
+    title: "Collaborators",
+    summary:
+      "You see a partnership, product or content collaboration that fits one of our companies.",
+    orgLabel: "Organisation",
+    orgRequired: false,
+    detailLabel: "Type of collaboration",
+    details: ["Partnership", "Product collaboration", "Media / Podcast", "Other"],
+    messageLabel: "What do you have in mind?",
+    submitLabel: "Propose a Collaboration",
+  },
+] as const;
+
+export type PartnerPath = (typeof partnerPaths)[number]["value"];

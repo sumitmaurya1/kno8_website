@@ -128,7 +128,7 @@ export function EcosystemMap() {
         </svg>
 
         <div
-          className="absolute left-1/2 top-1/2 flex h-[26%] w-[26%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-line bg-white shadow-[0_30px_50px_-22px_rgba(77,70,255,0.55)]"
+          className="absolute left-1/2 top-1/2 flex h-[26%] w-[26%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-line bg-surface shadow-[0_30px_50px_-22px_rgba(77,70,255,0.55)]"
           onMouseEnter={() => setActiveKey(null)}
         >
           <LogoMark className="h-[50%] w-auto" sizes="96px" />
@@ -157,8 +157,8 @@ export function EcosystemMap() {
                     className={cn(
                       "flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 ease-out-soft sm:h-[4.5rem] sm:w-[4.5rem]",
                       node.future
-                        ? "border border-dashed border-navy/30 bg-paper text-navy/60"
-                        : "bg-white shadow-[0_14px_30px_-18px_rgba(6,11,34,0.45)]",
+                        ? "border border-dashed border-fg/30 bg-paper text-fg/60"
+                        : "bg-surface shadow-[0_14px_30px_-18px_rgba(6,11,34,0.45)]",
                       isActive && "scale-110",
                     )}
                   >
@@ -191,7 +191,7 @@ export function EcosystemMap() {
       </div>
 
       <div aria-live="polite" className="lg:col-span-5">
-        <div className="min-h-[15rem] rounded-3xl border border-line bg-white shadow-card p-7 sm:p-8">
+        <div className="min-h-[15rem] rounded-3xl border border-line bg-surface shadow-card p-7 sm:p-8">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
             {detail.category}
           </p>

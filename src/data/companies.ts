@@ -21,7 +21,7 @@ export const companies: Company[] = [
     ],
     logo: "/companies/brewing-startup-logo.png",
     image: "/companies/brewing-startup-cover.svg",
-    website: null, // TODO: add the live URL
+    website: "https://brewingstartup.com",
     status: "active",
     featured: true,
     accent: { from: "#C6962F", to: "#8F6418" },
@@ -31,6 +31,33 @@ export const companies: Company[] = [
       "Explores entrepreneurship, startup ideas and product building in plain language.",
       "Shares the stories behind growing companies and the people building them.",
       "Gives first-time founders a clearer picture of what starting actually involves.",
+    ],
+    audience: ["Founders", "Builders", "First-time entrepreneurs", "Ambitious minds"],
+    highlights: [
+      {
+        title: "Plain language",
+        description: "The startup journey explained so it is easier to understand.",
+      },
+      {
+        title: "Real stories",
+        description: "The stories behind growing companies, told by the people building them.",
+      },
+      {
+        title: "A reason to start",
+        description: "Made to leave you more excited to begin, not more intimidated.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who is Brewing Startup for?",
+        answer:
+          "Founders, builders and ambitious minds exploring entrepreneurship, startup ideas and product building.",
+      },
+      {
+        question: "What does Brewing Startup publish?",
+        answer:
+          "Insightful content, conversations and resources about starting and growing companies.",
+      },
     ],
     offeringsTitle: "What you'll find",
     offerings: [
@@ -64,7 +91,7 @@ export const companies: Company[] = [
     ],
     logo: "/companies/naricarelife-logo.png",
     image: "/companies/naricarelife-cover.svg",
-    website: null, // TODO: add the live URL
+    website: "https://naricarelife.com/",
     status: "active",
     featured: true,
     accent: { from: "#F64980", to: "#B3124D" },
@@ -74,6 +101,83 @@ export const companies: Company[] = [
       "Builds personalised nutrition plans around each woman's stage of life.",
       "Runs structured wellness programs for specific health needs.",
       "Connects women with professionals for one-to-one consultations.",
+    ],
+    audience: [
+      "Teens and young adults",
+      "Working women",
+      "Women planning a pregnancy",
+      "Expecting and new mothers",
+      "Women in menopause",
+      "Parents",
+    ],
+    howItWorks: [
+      {
+        title: "Choose your concern",
+        description: "Select the wellness area where you need support.",
+      },
+      {
+        title: "Select your plan",
+        description: "Choose a 1, 3 or 6-month program that fits your life.",
+      },
+      {
+        title: "Talk to your expert",
+        description: "Connect one-on-one with a qualified nutrition professional.",
+      },
+      {
+        title: "Follow your journey",
+        description: "Receive structured guidance and track your progress over time.",
+      },
+    ],
+    highlights: [
+      {
+        title: "Women's health focus",
+        description:
+          "Everything is shaped around women's nutrition needs, from the first period to menopause and the motherhood years in between.",
+      },
+      {
+        title: "Plans built around your lifestyle",
+        description:
+          "Office hours, night shifts, school runs or joint family kitchens: the plan fits the day.",
+      },
+      {
+        title: "Indian food friendly",
+        description:
+          "Familiar dals, sabzis, millets and regional favourites. No expensive imported superfoods required.",
+      },
+      {
+        title: "Expert guidance by phone",
+        description: "A simple voice call from home. No video, no travel, no waiting rooms.",
+      },
+      {
+        title: "Sustainable habits",
+        description: "Small, realistic changes that are easier to keep than strict rules.",
+      },
+      {
+        title: "Progress-focused approach",
+        description:
+          "Regular reviews look at consistency, energy and routine, not just the number on a scale.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How do consultations take place?",
+        answer:
+          "By voice call, one-on-one with a qualified nutrition professional. There is no video call and no travel.",
+      },
+      {
+        question: "How long are the programs?",
+        answer: "Programs run as structured 1, 3 or 6-month journeys with dietitian consultations and progress reviews.",
+      },
+      {
+        question: "Are the plans based on Indian food?",
+        answer:
+          "Yes. Plans are built around real Indian meals and routines, using familiar everyday foods.",
+      },
+      {
+        question: "Does NariCareLife replace medical care?",
+        answer:
+          "No. It offers nutrition and lifestyle guidance that complements the care you receive from your doctor.",
+      },
     ],
     offeringsTitle: "Wellness programs",
     offerings: [

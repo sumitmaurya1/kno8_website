@@ -2,7 +2,8 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Headline } from "@/components/ui/Headline";
-import { contactInterests, siteConfig } from "@/data/site";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { activeSocialLinks, contactInterests, siteConfig } from "@/data/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -46,6 +47,10 @@ export default async function ContactPage({
                 </li>
               ))}
           </ul>
+
+          <div className="mt-8">
+            <SocialLinks links={activeSocialLinks()} owner="Kno8" />
+          </div>
 
           {siteConfig.email && (
             <p className="mt-8 text-muted">

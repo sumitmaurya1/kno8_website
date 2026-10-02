@@ -43,7 +43,7 @@ export function Logo({
       <span
         className={cn(
           "font-display text-[1.45rem] font-semibold leading-none tracking-[-0.04em]",
-          tone === "dark" ? "text-white" : "text-navy",
+          tone === "dark" ? "text-white" : "text-fg",
         )}
       >
         Kno8

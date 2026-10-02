@@ -6,6 +6,23 @@ export interface CompanyAccent {
   to: string;
 }
 
+export type SocialPlatform = "facebook" | "instagram" | "youtube" | "x" | "linkedin";
+
+export interface SocialLink {
+  platform: SocialPlatform;
+  href: string;
+}
+
+export interface TitledItem {
+  title: string;
+  description: string;
+}
+
+export interface Faq {
+  question: string;
+  answer: string;
+}
+
 export interface CompanyOffering {
   title: string;
   description?: string;
@@ -33,6 +50,17 @@ export interface Company {
   whatWeDo?: string[];
   offeringsTitle?: string;
   offerings?: CompanyOffering[];
+  /** Who the company serves, as short labels. */
+  audience?: string[];
+  /** Ordered steps describing how a customer uses the company. */
+  howItWorks?: TitledItem[];
+  /** Reasons to choose the company. */
+  highlights?: TitledItem[];
+  faqs?: Faq[];
+  /** Screenshots or photos; paths under /public. */
+  gallery?: { src: string; alt: string }[];
+  /** The company's own social profiles. */
+  socials?: SocialLink[];
   /** Extra rows for the "Company information" table, e.g. { label: "Founded", value: "2025" }. */
   facts?: { label: string; value: string }[];
 }

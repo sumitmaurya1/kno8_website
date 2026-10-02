@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Check } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import { CompanyCard } from "@/components/companies/CompanyCard";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { FaqList } from "@/components/ui/FaqList";
+import { IconBadge } from "@/components/ui/IconBadge";
 import { Reveal } from "@/components/ui/Reveal";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { Tilt } from "@/components/ui/Tilt";
 import { companies, getCompany, getRelatedCompanies, statusLabels } from "@/data/companies";
 import { pageMetadata } from "@/lib/seo";
 import { absoluteUrl, getAccent, hostname } from "@/lib/utils";
@@ -118,10 +122,27 @@ export default async function CompanyPage({ params }: Props) {
           <h2 id="about-title" className="display text-4xl sm:text-5xl lg:col-span-4">
             About
           </h2>
-          <div className="space-y-6 text-xl leading-relaxed text-navy/85 lg:col-span-8">
+          <div className="space-y-6 text-xl leading-relaxed text-fg/85 lg:col-span-8">
             {company.longDescription.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {company.audience && company.audience.length > 0 && (
+              <div className="pt-4">
+                <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-muted">
+                  Who it&rsquo;s for
+                </h3>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {company.audience.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full border border-line bg-surface px-4 py-2 text-base font-semibold shadow-card"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </Container>
       </section>
@@ -147,6 +168,36 @@ export default async function CompanyPage({ params }: Props) {
                 </li>
               ))}
             </ul>
+          </Container>
+        </section>
+      )}
+
+      {company.howItWorks && company.howItWorks.length > 0 && (
+        <section aria-labelledby="how-title" className="py-14 sm:py-20">
+          <Container>
+            <h2 id="how-title" className="display text-4xl sm:text-5xl">
+              How {company.name} works
+            </h2>
+            <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {company.howItWorks.map((step, index) => (
+                <li key={step.title}>
+                  <Reveal delay={index * 0.06} className="h-full">
+                    <div className="h-full rounded-2xl border border-line bg-surface p-7 shadow-card">
+                      <p
+                        className="font-display text-4xl font-bold tracking-tight"
+                        style={{ color: accent.from }}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <h3 className="mt-5 font-display text-xl font-bold tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="mt-2 leading-relaxed text-muted">{step.description}</p>
+                    </div>
+                  </Reveal>
+                </li>
+              ))}
+            </ol>
           </Container>
         </section>
       )}
@@ -179,7 +230,7 @@ export default async function CompanyPage({ params }: Props) {
               {company.offerings.map((offering) => (
                 <li
                   key={offering.title}
-                  className="relative overflow-hidden rounded-3xl border border-line bg-white shadow-card p-7"
+                  className="relative overflow-hidden rounded-3xl border border-line bg-surface shadow-card p-7"
                 >
                   <span
                     aria-hidden="true"
@@ -197,6 +248,72 @@ export default async function CompanyPage({ params }: Props) {
                 </li>
               ))}
             </ul>
+          </Container>
+        </section>
+      )}
+
+      {company.highlights && company.highlights.length > 0 && (
+        <section aria-labelledby="why-title" className="py-14 sm:py-20">
+          <Container>
+            <h2 id="why-title" className="display text-4xl sm:text-5xl">
+              Why {company.name}
+            </h2>
+            <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {company.highlights.map((item, index) => (
+                <li key={item.title}>
+                  <Reveal delay={(index % 3) * 0.06} className="h-full">
+                    <Tilt>
+                      <article className="h-full rounded-2xl border border-line bg-surface p-7 shadow-card">
+                        <IconBadge icon={Sparkles} />
+                        <h3 className="mt-5 font-display text-xl font-bold tracking-tight">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 leading-relaxed text-muted">{item.description}</p>
+                      </article>
+                    </Tilt>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
+
+      {company.gallery && company.gallery.length > 0 && (
+        <section aria-labelledby="gallery-title" className="py-14 sm:py-20">
+          <Container>
+            <h2 id="gallery-title" className="display text-4xl sm:text-5xl">
+              A closer look
+            </h2>
+            <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {company.gallery.map((image) => (
+                <li
+                  key={image.src}
+                  className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line shadow-card"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
+
+      {company.faqs && company.faqs.length > 0 && (
+        <section aria-labelledby="company-faq-title" className="py-14 sm:py-20">
+          <Container className="grid gap-10 lg:grid-cols-12">
+            <h2 id="company-faq-title" className="display text-4xl sm:text-5xl lg:col-span-4">
+              Questions about {company.name}
+            </h2>
+            <div className="lg:col-span-8">
+              <FaqList faqs={company.faqs} />
+            </div>
           </Container>
         </section>
       )}
@@ -238,6 +355,16 @@ export default async function CompanyPage({ params }: Props) {
                 )}
               </dd>
             </div>
+            {company.socials && company.socials.length > 0 && (
+              <div className="grid gap-3 border-b border-line py-5 sm:grid-cols-3 sm:gap-6">
+                <dt className="font-mono text-xs uppercase tracking-[0.18em] text-muted sm:pt-3">
+                  Follow
+                </dt>
+                <dd className="sm:col-span-2">
+                  <SocialLinks links={company.socials} owner={company.name} />
+                </dd>
+              </div>
+            )}
           </dl>
         </Container>
       </section>

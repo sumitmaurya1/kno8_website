@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { collaborators } from "@/data/content";
-import { contactHref } from "@/data/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -25,7 +24,7 @@ export default function VenturesPage() {
         highlight="Getting Started."
         description="Kno8 continuously explores opportunities across technology, health, media, education, consumer products and digital services. The companies you see today are only the beginning."
       >
-        <ButtonLink href={contactHref("partnership")}>Build With Kno8</ButtonLink>
+        <ButtonLink href="/partner">Build With Kno8</ButtonLink>
       </PageHero>
 
       <section aria-labelledby="areas-title" className="py-16 sm:py-24">
@@ -68,7 +67,7 @@ export default function VenturesPage() {
           />
           <ul className="mt-14 grid gap-4 lg:grid-cols-3">
             {collaborators.map((item) => (
-              <li key={item.title} className="rounded-3xl border border-line bg-white shadow-card p-8">
+              <li key={item.title} className="rounded-3xl border border-line bg-surface shadow-card p-8">
                 <h3 className="font-display text-2xl font-semibold tracking-tight">{item.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{item.description}</p>
               </li>

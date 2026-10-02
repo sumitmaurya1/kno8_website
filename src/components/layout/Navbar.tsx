@@ -12,10 +12,11 @@ import { buttonClass } from "@/components/ui/ButtonLink";
 import { companies } from "@/data/companies";
 import { mainNav } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 
 const linkClass =
-  "inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-navy/80 transition-colors hover:text-electric aria-[current=page]:text-electric";
+  "inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-fg/80 transition-colors hover:text-electric aria-[current=page]:text-electric";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -47,8 +48,8 @@ export function Navbar() {
         className={cn(
           "fixed inset-x-0 top-0 z-40 border-b transition-[background-color,border-color] duration-300",
           scrolled || megaOpen
-            ? "border-line bg-white/90 backdrop-blur-md"
-            : "border-transparent bg-white/60",
+            ? "border-line bg-surface/90 backdrop-blur-md"
+            : "border-transparent bg-surface/60",
         )}
       >
         <Container className="flex h-[4.5rem] items-center justify-between gap-6">
@@ -109,7 +110,7 @@ export function Navbar() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -8 }}
                             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-                            className="absolute inset-x-0 top-full border-b border-line bg-white shadow-[0_24px_48px_-28px_rgba(6,11,34,0.25)]"
+                            className="absolute inset-x-0 top-full border-b border-line bg-surface shadow-[0_24px_48px_-28px_rgba(6,11,34,0.25)]"
                           >
                             <Container className="grid grid-cols-12 gap-10 py-10">
                               <div className="col-span-8">
@@ -164,7 +165,7 @@ export function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMegaOpen(false)}
-                                    className="group rounded-2xl border border-line bg-white p-5 shadow-card transition-colors hover:border-electric/40"
+                                    className="group rounded-2xl border border-line bg-surface p-5 shadow-card transition-colors hover:border-electric/40"
                                   >
                                     <span className="flex items-center justify-between font-semibold">
                                       {link.title}
@@ -195,6 +196,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Link
               href="/contact"
               className={buttonClass("primary", "min-h-11 px-5 max-sm:hidden")}
@@ -208,7 +210,7 @@ export function Navbar() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               onClick={() => setMobileOpen(true)}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-navy/15 bg-white lg:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-fg/15 bg-surface lg:hidden"
             >
               <Menu aria-hidden="true" className="h-5 w-5" />
             </button>

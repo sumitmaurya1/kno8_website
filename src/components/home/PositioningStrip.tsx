@@ -13,7 +13,7 @@ export function PositioningStrip() {
             <li key={item.title}>
               <Reveal delay={index * 0.05} className="h-full">
                 <Tilt max={10}>
-                  <div className="h-full rounded-2xl border border-line bg-white p-5 shadow-card [transform-style:preserve-3d]">
+                  <div className="h-full rounded-2xl border border-line bg-surface p-5 shadow-card [transform-style:preserve-3d]">
                     <IconBadge icon={item.icon} className="[transform:translateZ(36px)]" />
                     <p className="mt-5 font-display text-lg font-bold tracking-tight [transform:translateZ(22px)]">
                       {item.title}

@@ -50,7 +50,7 @@ export default async function ArticlePage({ params }: Props) {
       <Container>
         <Link
           href="/insights"
-          className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-muted transition-colors hover:text-navy"
+          className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-muted transition-colors hover:text-fg"
         >
           <ArrowLeft aria-hidden="true" className="h-4 w-4" />
           All insights
@@ -80,7 +80,7 @@ export default async function ArticlePage({ params }: Props) {
                   {section.heading}
                 </h2>
               )}
-              <div className="mt-5 space-y-5 text-lg leading-[1.75] text-navy/85">
+              <div className="mt-5 space-y-5 text-lg leading-[1.75] text-fg/85">
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -99,7 +99,7 @@ export default async function ArticlePage({ params }: Props) {
                 <li key={item.slug}>
                   <Link
                     href={`/insights/${item.slug}`}
-                    className="block h-full rounded-3xl border border-line bg-white shadow-card p-7 transition-colors hover:border-navy/25"
+                    className="block h-full rounded-3xl border border-line bg-surface shadow-card p-7 transition-colors hover:border-fg/25"
                   >
                     <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                       {item.category}

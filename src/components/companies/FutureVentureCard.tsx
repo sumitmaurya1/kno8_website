@@ -21,7 +21,7 @@ export function FutureVentureCard() {
           </div>
         </div>
         <div className="lg:col-span-5 lg:justify-self-end">
-          <ButtonLink href="/ventures" variant="light">
+          <ButtonLink href="/partner" variant="light">
             Build With Kno8
           </ButtonLink>
         </div>

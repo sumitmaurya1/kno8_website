@@ -52,7 +52,7 @@ export default function InsightsPage() {
                     </div>
                     <ArrowUpRight
                       aria-hidden="true"
-                      className="hidden h-7 w-7 justify-self-end text-navy/40 transition-[transform,color] duration-300 ease-out-soft group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-electric lg:col-span-1 lg:block"
+                      className="hidden h-7 w-7 justify-self-end text-fg/40 transition-[transform,color] duration-300 ease-out-soft group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-electric lg:col-span-1 lg:block"
                     />
                   </article>
                 </li>

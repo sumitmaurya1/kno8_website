@@ -38,7 +38,7 @@ export default function CareersPage() {
           />
           <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {disciplines.map((discipline) => (
-              <li key={discipline.title} className="rounded-3xl border border-line bg-white shadow-card p-8">
+              <li key={discipline.title} className="rounded-3xl border border-line bg-surface shadow-card p-8">
                 <h3 className="font-display text-2xl font-semibold tracking-tight">
                   {discipline.title}
                 </h3>

@@ -1,11 +1,14 @@
+import { SectionDecor } from "@/components/decor/SectionDecor";
 import { CompaniesGrid } from "@/components/companies/CompaniesGrid";
 import { BuildTimeline } from "@/components/home/BuildTimeline";
 import { CareersSection } from "@/components/home/CareersSection";
 import { CTASection } from "@/components/home/CTASection";
 import { EcosystemMap } from "@/components/home/EcosystemMap";
 import { FaqSection } from "@/components/home/FaqSection";
+import { FamilyStrip } from "@/components/home/FamilyStrip";
 import { Hero } from "@/components/home/Hero";
 import { IndustryGrid } from "@/components/home/IndustryGrid";
+import { Marquee } from "@/components/home/Marquee";
 import { ManifestoSection } from "@/components/home/ManifestoSection";
 import { PhilosophyGrid } from "@/components/home/PhilosophyGrid";
 import { PositioningStrip } from "@/components/home/PositioningStrip";
@@ -23,9 +26,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <FamilyStrip />
       <PositioningStrip />
 
-      <section aria-labelledby="companies-title" className="py-16 sm:py-24">
+      <section aria-labelledby="companies-title" className="relative py-16 sm:py-24">
+        <SectionDecor side="right" variant="a" />
         <Container>
           <SectionHeader
             id="companies-title"
@@ -40,7 +45,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section aria-labelledby="build-title" className="py-16 sm:py-24">
+      <section aria-labelledby="build-title" className="relative py-16 sm:py-24">
+        <SectionDecor side="right" variant="b" />
         <Container>
           <SectionHeader
             id="build-title"
@@ -48,13 +54,14 @@ export default function HomePage() {
             title={["From Opportunity", "to Company."]}
             highlight="to Company."
           />
-          <Reveal className="mt-14 rounded-[2rem] border border-line bg-white p-7 shadow-card sm:p-10 lg:p-12">
+          <Reveal className="mt-14 rounded-[2rem] border border-line bg-surface p-7 shadow-card sm:p-10 lg:p-12">
             <BuildTimeline />
           </Reveal>
         </Container>
       </section>
 
-      <section aria-labelledby="areas-title" className="py-16 sm:py-24">
+      <section aria-labelledby="areas-title" className="relative py-16 sm:py-24">
+        <SectionDecor side="right" variant="c" />
         <Container>
           <SectionHeader
             id="areas-title"
@@ -67,6 +74,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <Marquee />
 
       <ManifestoSection cta={{ label: "More About Kno8", href: "/about" }} />
 
@@ -85,7 +94,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section aria-labelledby="ecosystem-title" className="py-16 sm:py-24">
+      <section aria-labelledby="ecosystem-title" className="relative py-16 sm:py-24">
+        <SectionDecor side="right" variant="b" />
         <Container>
           <SectionHeader
             id="ecosystem-title"

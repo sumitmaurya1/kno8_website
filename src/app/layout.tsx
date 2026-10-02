@@ -2,10 +2,13 @@ import type { Metadata, Viewport } from "next";
 import { Kristi, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { BackToTop } from "@/components/ui/BackToTop";
+import { ChatWidget } from "@/components/ui/ChatWidget";
+import { CookieNotice } from "@/components/ui/CookieNotice";
 import { MotionProvider } from "@/components/ui/MotionProvider";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { companies } from "@/data/companies";
-import { siteConfig, socialLinks } from "@/data/site";
+import { activeSocialLinks, siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/utils";
 import "./globals.css";
 
@@ -59,7 +62,7 @@ const organizationJsonLd = {
   slogan: siteConfig.tagline,
   description: siteConfig.description,
   ...(siteConfig.email ? { email: siteConfig.email } : {}),
-  sameAs: socialLinks.flatMap((link) => (link.href ? [link.href] : [])),
+  sameAs: activeSocialLinks().map((link) => link.href),
   subOrganization: companies.map((company) => ({
     "@type": "Organization",
     name: company.name,
@@ -72,9 +75,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${manrope.variable} ${jakarta.variable} ${script.variable}`}
     >
       <body className="min-h-dvh overflow-x-clip">
+        {/* Applies a saved dark theme before first paint, so the page never flashes light. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("kno8-theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
@@ -89,6 +99,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main id="main">{children}</main>
           <Footer />
+          <BackToTop />
+          <ChatWidget />
+          <CookieNotice />
         </MotionProvider>
         <script
           type="application/ld+json"

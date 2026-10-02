@@ -9,8 +9,9 @@ const variants: Record<Variant, string> = {
   primary:
     // The ::before is a light sheen that sweeps across on hover.
     "relative overflow-hidden bg-brand px-6 text-white shadow-button hover:brightness-110 before:pointer-events-none before:absolute before:inset-y-0 before:-left-1/2 before:w-1/3 before:-skew-x-12 before:bg-white/30 before:opacity-0 before:transition-[transform,opacity] before:duration-700 hover:before:translate-x-[500%] hover:before:opacity-100",
-  secondary: "border border-navy/15 bg-white px-6 text-navy hover:border-electric/50",
-  light: "bg-white px-6 text-navy hover:bg-paper",
+  secondary: "border border-fg/15 bg-surface px-6 text-fg hover:border-electric/50",
+  // Always white: this variant only sits on permanently dark surfaces.
+  light: "bg-white px-6 text-navy hover:bg-[#e9edff]",
   text: "px-1 text-electric hover:text-iris",
 };
 

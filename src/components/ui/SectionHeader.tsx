@@ -34,7 +34,7 @@ export function SectionHeader({
         className={cn(
           "display text-[clamp(2rem,4vw,3.25rem)]",
           eyebrow && "mt-4",
-          tone === "dark" ? "text-white" : "text-navy",
+          tone === "dark" ? "text-white" : "text-fg",
         )}
       >
         <Headline lines={title} highlight={highlight} tone={tone} />

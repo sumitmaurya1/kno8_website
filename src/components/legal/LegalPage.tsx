@@ -37,7 +37,7 @@ export function LegalPage({
                 <li key={section.id}>
                   <a
                     href={`#${section.id}`}
-                    className="inline-flex min-h-10 items-center text-muted transition-colors hover:text-navy"
+                    className="inline-flex min-h-10 items-center text-muted transition-colors hover:text-fg"
                   >
                     {section.heading}
                   </a>
@@ -53,7 +53,7 @@ export function LegalPage({
                 <h2 className="font-display text-3xl font-semibold tracking-tight">
                   {section.heading}
                 </h2>
-                <div className="mt-4 space-y-4 text-lg leading-[1.75] text-navy/85">
+                <div className="mt-4 space-y-4 text-lg leading-[1.75] text-fg/85">
                   {section.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

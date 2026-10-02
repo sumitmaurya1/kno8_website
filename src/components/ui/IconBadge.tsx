@@ -6,7 +6,7 @@ export function IconBadge({ icon: Icon, className }: { icon: LucideIcon; classNa
   return (
     <span
       className={cn(
-        "inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#ECEBFF] text-iris",
+        "inline-flex h-12 w-12 items-center justify-center rounded-full bg-tint text-iris",
         className,
       )}
     >

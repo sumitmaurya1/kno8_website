@@ -1,3 +1,4 @@
+import { FoundersSection } from "@/components/about/FoundersSection";
 import { CompaniesGrid } from "@/components/companies/CompaniesGrid";
 import { BuildTimeline } from "@/components/home/BuildTimeline";
 import { CTASection } from "@/components/home/CTASection";
@@ -32,6 +33,8 @@ export default function AboutPage() {
       </PageHero>
 
       <ManifestoSection eyebrow="Our story" id="story" />
+
+      <FoundersSection />
 
       <section aria-labelledby="approach-title" className="py-16 sm:py-24">
         <Container>
@@ -125,6 +128,7 @@ export default function AboutPage() {
         paragraphs={[
           "We are always interested in meeting ambitious founders, creators, specialists and businesses working on meaningful ideas.",
         ]}
+        cta={{ label: "Partner With Us", href: "/partner" }}
       />
     </>
   );

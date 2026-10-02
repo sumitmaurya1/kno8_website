@@ -10,12 +10,12 @@ import { cn } from "@/lib/utils";
 const initialState: ContactState = { status: "idle" };
 
 const fieldClass =
-  "mt-2 block w-full rounded-2xl border border-navy/20 bg-white px-4 py-3.5 text-base text-navy placeholder:text-muted/70 transition-colors hover:border-navy/40 focus:border-electric focus:outline-2 focus:outline-offset-0 focus:outline-electric aria-[invalid=true]:border-red-600";
+  "mt-2 block w-full rounded-2xl border border-fg/20 bg-surface px-4 py-3.5 text-base text-fg placeholder:text-muted/70 transition-colors hover:border-fg/40 focus:border-electric focus:outline-2 focus:outline-offset-0 focus:outline-electric aria-[invalid=true]:border-red-600 dark:border-red-400";
 
 function ErrorText({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-2 text-sm font-medium text-red-700">
+    <p id={id} className="mt-2 text-sm font-medium text-red-700 dark:text-red-400">
       {message}
     </p>
   );
@@ -26,7 +26,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
 
   if (state.status === "success") {
     return (
-      <div role="status" className="rounded-3xl border border-line bg-white shadow-card p-8 sm:p-10">
+      <div role="status" className="rounded-3xl border border-line bg-surface shadow-card p-8 sm:p-10">
         <CheckCircle2 aria-hidden="true" className="h-10 w-10 text-electric" />
         <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight">
           Conversation started.
@@ -41,7 +41,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
   const error = (field: ContactField) => state.errors?.[field];
   const describedBy = (field: ContactField) => (error(field) ? `${field}-error` : undefined);
   return (
-    <form action={formAction} noValidate className="rounded-3xl border border-line bg-white shadow-card p-6 sm:p-10">
+    <form action={formAction} noValidate className="rounded-3xl border border-line bg-surface shadow-card p-6 sm:p-10">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-semibold">
@@ -152,7 +152,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           {pending ? "Sending…" : "Start the Conversation"}
           <ArrowRight aria-hidden="true" className="h-4 w-4" />
         </button>
-        <p role="alert" className="text-sm font-medium text-red-700">
+        <p role="alert" className="text-sm font-medium text-red-700 dark:text-red-400">
           {state.status === "error" ? state.message : null}
         </p>
       </div>

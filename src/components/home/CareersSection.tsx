@@ -21,7 +21,7 @@ export function CareersSection() {
           {disciplines.map((discipline) => (
             <li
               key={discipline.title}
-              className="rounded-2xl border border-line bg-white px-5 py-6 font-display text-lg font-bold tracking-tight shadow-card"
+              className="rounded-2xl border border-line bg-surface px-5 py-6 font-display text-lg font-bold tracking-tight shadow-card"
             >
               {discipline.title}
             </li>

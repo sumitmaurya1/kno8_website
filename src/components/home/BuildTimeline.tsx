@@ -35,7 +35,7 @@ export function BuildTimeline() {
         <li key={step.title} className="relative pl-10 lg:pl-0 lg:pt-12">
           <span
             aria-hidden="true"
-            className="absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border-[3px] border-iris bg-white lg:top-0"
+            className="absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border-[3px] border-iris bg-surface lg:top-0"
           />
           <p className="text-sm font-bold text-iris">
             {String(index + 1).padStart(2, "0")}

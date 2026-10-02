@@ -36,7 +36,7 @@ function WebsiteLink({ company }: { company: Company }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Visit the ${company.name} website (opens in a new tab)`}
-      className="relative z-10 inline-flex min-h-11 items-center gap-1.5 rounded-full border border-line px-4 text-sm font-medium text-muted transition-colors hover:border-navy/30 hover:text-navy"
+      className="relative z-10 inline-flex min-h-11 items-center gap-1.5 rounded-full border border-line px-4 text-sm font-medium text-muted transition-colors hover:border-fg/30 hover:text-fg"
     >
       {hostname(company.website)}
       <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
@@ -66,7 +66,7 @@ export function CompanyCard({
     return (
       <article
         style={accentStyle(company)}
-        className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-card p-7 transition-[border-color,transform] duration-500 ease-out-soft hover:-translate-y-1 hover:border-navy/25 sm:p-8"
+        className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface shadow-card p-7 transition-[border-color,transform] duration-500 ease-out-soft hover:-translate-y-1 hover:border-fg/25 sm:p-8"
       >
         <span
           aria-hidden="true"
@@ -84,7 +84,7 @@ export function CompanyCard({
             {company.name}
           </Link>
         </Heading>
-        <p className="mt-1 font-medium text-navy/80">{company.tagline}</p>
+        <p className="mt-1 font-medium text-fg/80">{company.tagline}</p>
         <p className="mb-6 mt-4 leading-relaxed text-muted">{company.description}</p>
         <div className="mt-auto flex flex-wrap items-center justify-between gap-3">
           <CategoryTags category={company.category} />
@@ -97,7 +97,7 @@ export function CompanyCard({
   return (
     <article
       style={accentStyle(company)}
-      className="group relative grid overflow-hidden rounded-[2rem] border border-line bg-white transition-[border-color,box-shadow] duration-500 hover:border-navy/20 hover:shadow-[0_30px_60px_-40px_rgba(6,11,34,0.35)] lg:grid-cols-12"
+      className="group relative grid overflow-hidden rounded-[2rem] border border-line bg-surface transition-[border-color,box-shadow] duration-500 hover:border-fg/20 hover:shadow-[0_30px_60px_-40px_rgba(6,11,34,0.35)] lg:grid-cols-12"
     >
       <div
         className={cn(

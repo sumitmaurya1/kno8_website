@@ -36,7 +36,8 @@ const sections: LegalSection[] = [
     id: "cookies",
     heading: "Cookies",
     paragraphs: [
-      "This website does not set advertising or tracking cookies. If we add analytics or similar tools in future, we will update this section to describe them and, where required, ask for your consent first.",
+      "This website does not set advertising or tracking cookies. It saves two small preferences in your browser's local storage: whether you chose the light or dark theme, and whether you have dismissed the cookie notice. Neither is sent to us or shared with anyone.",
+      "If we add analytics or similar tools in future, we will update this section to describe them and, where required, ask for your consent first.",
     ],
   },
   {
