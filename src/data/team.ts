@@ -21,7 +21,7 @@ export const founders: Founder[] = [
   {
     name: "Girish Naidu",
     role: "Founder & Strategic Advisor",
-    focus: ["Brand Strategy", "Investor Relations", "Consultations"],
+    focus: ["Investor Relations", "Consultations"],
     email: "girish@kno8.in",
   },
   {

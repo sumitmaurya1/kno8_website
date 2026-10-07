@@ -145,28 +145,28 @@ export const disciplines = [
  */
 export const milestones = [
   {
-    period: "The starting point",
-    title: "A belief about curiosity",
+    period: "Where it began",
+    title: "One curious question.",
     description:
-      "Kno8 begins with the idea that great companies start with curiosity about how things could be better.",
+      "We kept asking how things could work better, and that curiosity became Kno8.",
   },
   {
-    period: "First companies",
-    title: "Brewing Startup and NariCareLife",
+    period: "Our first companies",
+    title: "Two ideas, two very different fields.",
     description:
-      "Two companies in two very different fields: one for founders and builders, one for women's wellness.",
+      "Brewing Startup supports founders and builders. NariCareLife looks after women's wellness. We built both because we saw a real need.",
   },
   {
-    period: "Today",
-    title: "A parent company",
+    period: "Where we are now",
+    title: "A home for companies, ideas and introductions.",
     description:
       "Kno8 operates as a growing ecosystem of companies, products and experiments rather than a single product.",
   },
   {
-    period: "Next",
-    title: "More companies",
+    period: "What's next",
+    title: "Room for more.",
     description:
-      "New ventures across technology, health, media, education, consumer products and digital services.",
+      "New ventures across technology, health, media and education are on the way, and we'd love to hear from anyone building something worth growing.",
   },
 ];
 
